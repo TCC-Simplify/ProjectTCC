@@ -1,0 +1,114 @@
+body {
+    background-color: rgb(37, 37, 44);
+}
+
+
+.tudo{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    margin: auto;
+    font-family: 'Poppins', sans-serif;
+    width: 760px;
+    padding: 50px 70px 50px 70px;
+    background: #f7f7f7;
+    border: 2px solid darkslateblue;
+    border-radius: 15px;
+}
+
+.tam{
+    width: 600px;
+}
+
+.header{
+    display: flex;
+}
+.volt{
+    float: left;
+    margin-right: 370px;
+    margin-top: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #555;
+}
+.volt:hover{
+    text-decoration: none;
+    color: rgb(58, 141, 109);
+}
+
+.ir{
+    float: right;
+    margin-left: 215px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #555;
+}
+.ir:hover{
+    text-decoration: none;
+    color: rgb(58, 141, 109);
+}
+
+.etapas{
+    display: flex;
+    justify-content: space-around;
+}
+ 
+.etapas h4{
+    margin-top: 15px;
+}
+
+.fil-2{
+    display: flex;
+}
+
+#cep{
+    width: 400px;
+}
+
+#endereco{
+    width: 450px;
+}
+
+#bairro{
+    width: 350px;
+}
+
+#botao{ text-align: center }
+.btn-enviar {
+    align-items: center;
+    align-content: center;
+    width: 200px;
+    height: 50px;
+    border-radius: 4px;
+    color: #fff;
+    background-color: rgb(95, 185, 151);
+    cursor: pointer;
+}
+
+.btn-enviar:hover {
+    background-color: rgb(58, 141, 109);
+    background-color: rgb(58, 141, 109);
+}
+
+.aut{
+    margin-left: 200px;
+    margin-top: 10px;
+}
+
+.em{
+    margin-top: 40px;
+}
+
+.se{
+    margin-bottom: 40px;
+}
+
+.link{
+    margin-left: 195px;
+}
