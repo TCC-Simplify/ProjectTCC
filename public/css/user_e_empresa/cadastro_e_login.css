@@ -91,9 +91,33 @@ body {
     cursor: pointer;
 }
 
-.btn-enviar:hover {
+.btn-enviar:hover, .btn-email:hover{
     background-color: rgb(58, 141, 109);
     background-color: rgb(58, 141, 109);
+}
+
+.btn-email{
+    align-items: center;
+    align-content: center;
+    width: 600px;
+    height: 50px;
+    border-radius: 4px;
+    color: #fff;
+    background-color: rgb(95, 185, 151);
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+.email{
+    height: 500px;
+}
+
+.inp-email{
+    margin-top: 80px
+}
+
+.inp-reset{
+    margin-top: 40px;
 }
 
 .aut{

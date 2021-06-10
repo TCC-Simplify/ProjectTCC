@@ -92,6 +92,18 @@
             .es{
                 color: rgb(37, 37, 44);
             }
+
+            #descricao{
+                display:none; 
+                position:absolute;
+                width:100px; 
+                background-color: rgba(150, 150, 150, 0.500);
+                color: black;
+                top:10px; 
+                left: 1490px;
+                text-align: center;
+                border-radius: 4px;
+            }
         </style>
 
         <script>

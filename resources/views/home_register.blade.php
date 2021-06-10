@@ -5,6 +5,11 @@
         <a href="{{ url('') }}" style="color: rgb(38, 109, 82);">Usuários</a>
         <a href="{{ url('') }}">Empresa</a>
         <a href="{{ url('') }}">Controle</a>
+        <a class="log" href="{{ url('/logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();" onmouseover="getElementById('descricao').style.display='block'" onmouseout="getElementById('descricao').style.display='none'"><i class="fas fa-sign-out-alt"></i></a>
+        <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+            {{ csrf_field() }}
+        </form>
+        <div id="descricao">Sair</div>
     </div>
 @endsection
 
