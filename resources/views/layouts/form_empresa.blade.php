@@ -3,6 +3,8 @@
 
 {{ csrf_field() }}
 
+
+
 <input type="text" class="form-control" name="nome" placeholder="Nome:" value="{{ $empresa->nome ?? old('nome') }}" required>
 </div>
 

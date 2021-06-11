@@ -24,9 +24,8 @@ Route::get('/emails', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+Route::get('/log', 'LogController@index');
 
 //Rotas Empresa
 Route::get('/cadastro', 'EmpresaController@create');
 Route::post('/cadastro_empresa', 'EmpresaController@store');
-
-Route::post('/cadastro_user', 'EmpresaController@store');

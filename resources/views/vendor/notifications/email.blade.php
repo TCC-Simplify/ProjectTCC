@@ -145,7 +145,7 @@ $style = [
                                                 <tr>
                                                     <td style="{{ $fontFamily }}">
                                                         <p style="{{ $style['paragraph-sub'] }}">
-                                                            Se você estiver tendo problemas para clicar no "Redefinir senha" botão,
+                                                            Se você estiver tendo problemas para clicar no botão "Redefinir senha",
                                                             copie e cole o URL abaixo em seu navegador:
                                                         </p>
 
