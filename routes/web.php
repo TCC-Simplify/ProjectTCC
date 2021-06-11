@@ -26,7 +26,7 @@ Route::get('/editar/{id}', 'EmpresaController@edit');
 Route::get('/cadastro_user',function(){
     return view('users/cad_users');
 });
-
+Route::post('/cad_user', 'UsuarioController@create');
 
 
 

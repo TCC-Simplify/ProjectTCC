@@ -76,26 +76,4 @@ class RegisterController extends Controller
             'empresa' => $id
         ]);
     }
-
-    public function edit($id)
-    {
-        $user= $this->repository->find($id);
-        if(!$user)
-        {
-            return redirect()->back();
-        }
-         return view('alterar_dados_usuario',compact('usuario'));
-    }
-
-    public function update(Request $request, $id)
-    {
-        $user= $this->repository->find($id);
-        if(!$user)
-        {
-            return redirect()->back();
-        }
-        $data=$request->all();
-        $user->update($data);
-        return redirect()->route('');
-    }
 }

@@ -19,7 +19,7 @@
     </div>
     <br><br><br>
 
-    <form action="{{ url('/register')}}" method="POST" enctype="multipart/form-data" class="form">
+    <form action="{{ url('/cad_user')}}" method="POST" enctype="multipart/form-data" class="form">
 
         <div class="form-group">
 
@@ -53,7 +53,7 @@
         </div>
 
         <div class="form-group">
-            <input type="text" class="form-control" name="senha" value="123456" style="display: hidden;">
+            <input type="text" class="form-control" name="password" value="123456" style="display: hidden;">
         </div>
 
         <div id="botao">
