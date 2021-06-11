@@ -1,0 +1,48 @@
+{
+  "name": "js-brasil",
+  "version": "2.4.6",
+  "description": "Javascript Utils para Brasil (cpf, cnpj...)",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "watch": "npm run build & onchange 'src/**/*.ts' '*.ts' -- npm run build",
+    "watch:test": "onchange 'src/**/*.ts' '*.ts' -- npm run test",
+    "clean": "find ./src -name \"*.js\" -type f -delete & rm *.js & rm -rf dist/ && mkdir dist ",
+    "test": "mocha -r ts-node/register test/**.ts",
+    "browserify": "browserify dist/index.js --standalone jsbrasil -o js-brasil.js",
+    "manual:compile": "tsc && tsc addons.ts && rm src/*.js && rm src/addons/*.js",
+    "dist": "npm run build && npm run browserify && cp js-brasil.js dist/",
+    "a:build": "tsc -p addons",
+    "a:browserify": "browserify dist/addons/addons.js --standalone jsbrasil-addons -o js-brasil-addons.js",
+    "a:dist": "npm run a:build && npm run a:browserify && cp js-brasil-addons.js dist/",
+    "publishnpm": "npm run dist && npm publish",
+    "start": "cd docs && http-server",
+    "demo": "cp js-brasil.js docs/ && npm run start",
+    "demo-build": "npm run dist && cp js-brasil.js docs/",
+    "demo-full": "npm run dist && npm run demo"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mariohmol/js-brasil.git"
+  },
+  "author": "Mario Mol <mariohmol@gmail.com> (http://rama.net.br)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mariohmol/js-brasil/issues"
+  },
+  "homepage": "https://github.com/mariohmol/js-brasil#readme",
+  "dependencies": {
+    "randexp": "^0.5.3",
+    "text-mask-addons": "^3.8.0"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.1.5",
+    "@types/mocha": "^5.2.5",
+    "chai": "^4.1.2",
+    "codelyzer": "^5.2.0",
+    "mocha": "^8.3.2",
+    "onchange": "^7.1.0",
+    "ts-node": "^7.0.1",
+    "typescript": "~4.0.2"
+  }
+}

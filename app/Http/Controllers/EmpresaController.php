@@ -57,6 +57,7 @@ class EmpresaController extends Controller
 
         $id_empresa = DB::table('empresas')->where('cnpj', $request['cnpj'])->value('id_empresa');
         session()->put('id_empresa', $id_empresa);
+        session()->put('senha_empresa', $request['senha']);
 
         return view('/auth/register');
     }
@@ -102,9 +103,11 @@ class EmpresaController extends Controller
         {
             return redirect()->back();
         }
-        $data=$request->all();
+        $data=$request->only(['id']);
         $empresas->update($data);
         return redirect()->route('');
+
+        
     }
 
     /**
@@ -113,14 +116,15 @@ class EmpresaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
         $empresa= $this->repository->find($id);
         if(!$empresa)
         {
             return redirect()->back();
         }
-        $empresa->delete();
+        $data=$request->only('ativo');
+        $empresas->update($data);
 
         return redirect()->route('');
     }

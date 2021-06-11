@@ -59,6 +59,8 @@
                 </div>
             </div>
 
+            <input id="permissao" type="text" class="form-control tam" name="permissao" value="1" style="display: none;">
+
             <div class="form-group{{ $errors->has('funcao') ? ' has-error' : '' }}">
 
                 <div class="col-md-6">

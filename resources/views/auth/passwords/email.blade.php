@@ -24,7 +24,7 @@
                     <input id="email" type="email" class="form-control tam inp-email" placeholder="Email:" name="email" value="{{ old('email') }}" required>
 
                     @if ($errors->has('email'))
-                        <span class="help-block">
+                        <span class="alert alert-success">
                             <strong>{{ $errors->first('email') }}</strong>
                         </span>
                     @endif

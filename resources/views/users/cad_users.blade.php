@@ -15,17 +15,17 @@
     </div>
     <br><br>
     <div>
-        <h1>Cadastro de empresas</h1>
+        <h1>Cadastro de Funcionarios</h1>
     </div>
     <br><br><br>
 
-    <form action="{{ url('/cadastro_empresa')}}" method="post" enctype="multipart/form-data" class="form">
+    <form action="{{ url('/register')}}" method="POST" enctype="multipart/form-data" class="form">
 
         <div class="form-group">
 
             {{ csrf_field() }}
 
-            <input type="text" class="form-control" name="nome" placeholder="Nome:" value="{{ $users->nome ?? old('nome') }}">
+            <input type="text" class="form-control" name="name" placeholder="Nome:" value="{{ $users->nome ?? old('nome') }}">
         </div>
 
         <div class="form-group">
@@ -49,24 +49,12 @@
         </div>
 
         <div class="form-group">
-
             <input type="text" class="form-control" name="permissao" placeholder="permissao:" value="{{ $users->permissao ?? old('permissao') }}">
         </div>
 
         <div class="form-group">
-
-            <input type="text" class="form-control" name="password" placeholder="password:" value="{{ $user->session()->get('senha_empresa') ??  old('password') }}">
+            <input type="text" class="form-control" name="senha" value="123456" style="display: hidden;">
         </div>
-
-       
-        <div class="form-group">
-
-            <input type="text" class="form-control" name="confirma_senha" placeholder="Confirma senha:" value="{{ $user->session()->get('senha_empresa') ??  old('confirma_senha)   }}">
-        </div>
-        <div class="form-group">
-
-            <input type="text" class="form-control" name="ativo" placeholder="Ativo:" value="{{ $users->ativo ?? old('ativo') }}">
-        </div><br><br>
 
         <div id="botao">
             <input type="submit" name="botao" value="Enviar:" class="btn-enviar" />

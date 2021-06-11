@@ -21,6 +21,15 @@ Route::get('/emails', function () {
     return view('emails');
 });
 
+//rotas usuario
+Route::get('/editar/{id}', 'EmpresaController@edit');
+Route::get('/cadastro_user',function(){
+    return view('users/cad_users');
+});
+
+
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');

@@ -29,5 +29,11 @@
 
     <!-- Scripts -->
     <script src="/js/app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+    <script src="/js/node_modules/js-brasil/js-brasil.js"></script>
+    <script src="/js/jquery.maskedinput-1.3.min.js"></script>
+    <script src="/js/jquery-1.2.6.pack.js"></script>
+    <script src="/js/jquery.maskedinput-1.1.4.pack.js"></script>
+    <script src="/js/funcs_cad_profissional.js"></script>
 </body>
 </html>
