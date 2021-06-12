@@ -32,13 +32,15 @@ Route::get('/cadastro_user',function(){
 Route::post('/cad_user', 'UsuarioController@create');
 Route::get('/users', 'UsuarioController@index');
 
-Route::get('/alt_user/{id}', 'UsuarioController@show');
+Route::get('/pag_user', 'UsuarioController@show');
+Route::get('/alt_user/{id}', 'UsuarioController@edit');
 Route::get('/del_user/{id}', 'UsuarioController@del');
 
 Route::post('/update_user/{id}', 'UsuarioController@update');
 Route::post('/delete_user/{id}', 'UsuarioController@delete');
 
 //Rotas Empresa
+Route::get('/empresa', 'EmpresaController@show');
 Route::get('/cadastro', 'EmpresaController@create');
 Route::post('/cadastro_empresa', 'EmpresaController@store');
 Route::get('/editar/{id}', 'EmpresaController@edit');

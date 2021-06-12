@@ -14,11 +14,11 @@
 @endsection
 
 @section('opcoes')
-    <div class="opcoes">
-        <div class="a"><a href="{{ url('/cadastro_user') }}"><i class="fas fa-user-plus es"></i></a></div>
-        <div class="a"><a href="{{ url('') }}"><i class="fas fa-user-times"></i></a></div>
-        <div class="a"><a href="{{ url('') }}"><i class="fas fa-user-edit"></i></a></div>
-        <div class="a"><a href="{{ url('/users') }}"><i class="fas fa-users"></i></a></div>
+    <div class="opcoes users">
+        <div class="a"><a href="{{ url('/pag_user') }}"><i class="fas fa-user"></i></a></div>
+        <div class="a"><a href="{{ url('/cadastro_user') }}"><i class="fas fa-user-plus"></i></a></div>
+        <div class="a"><a href="{{ url('/users') }}"><i class="fas fa-users es"></i></a></div>
+        <div class="a"><a href="{{ url('') }}"><i class="fas fa-chart-area"></i></a></div>
     </div>
 @endsection
 
@@ -37,7 +37,7 @@
 
             <div class="form-group">
 
-                <input type="text" class="form-control cad-tam" name="email" placeholder="Email:" value="{{ $usuario->email}}">
+                <input type="text" class="form-control cad-tam" name="email" placeholder="Email:" value="{{ $usuario->email}}" disabled>
             </div>
 
             <div class="form-group">
@@ -55,16 +55,12 @@
                 <input type="text" class="form-control cad-tam" name="funcao" placeholder="Setor:" value="{{ $usuario->funcao }}">
             </div>
 
-            <div class="form-group dec">
-                <input type="text" class="form-control cad-tam" name="permissao" placeholder="Setor:" value="<?php
-                    if($usuario->permissao == 1){
-                        echo "Administrador";
-                    }else if($usuario->permissao == 2){
-                        echo "Gerente";
-                    }else{
-                        echo "Funcionario";
-                    }
-                ?>">
+            <div class="form-group dec">   
+                <select name="permissao" onchange="reloadWithParam()" >
+                            <option value="1" <?php if($usuario->permissao == 1) echo "selected"?>>Administrador</option>
+                            <option value="2" <?php if($usuario->permissao == 2) echo "selected"?>>Gerente</option>
+                            <option value="3" <?php if($usuario->permissao == 3) echo "selected"?>>Funcionário</option>
+                </select>
             </div>
 
             <div class="form-group">

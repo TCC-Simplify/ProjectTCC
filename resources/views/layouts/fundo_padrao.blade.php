@@ -60,10 +60,17 @@
                 color: rgb(37, 37, 44);
             }
 
-            .opcoes{
+            .users{
                 text-align: center;
                 display: grid;
                 grid-template-rows: 15vh 15vh 15vh 15vh;
+            }
+
+            .empresa{
+                text-align: center;
+                display: grid;
+                grid-template-rows: 20vh 20vh;
+                margin-top: 80px;
             }
 
             .cima{

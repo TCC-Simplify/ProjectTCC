@@ -68,9 +68,10 @@ class EmpresaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
+    public function show(){
+        $id = session()->get('id_empresa');
+        $dados = DB::table('empresas')->where('id_empresa', $id);
+        return view('empresa/empresa',compact('dados'));
     }
 
     /**
@@ -98,14 +99,24 @@ class EmpresaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $empresa= $this->repository->find($id);
-        if(!$empresa)
-        {
+        //senha_empresa = session()->get('senha_empresa');
+        $senha_empresa = DB::table('empresa')->where('id_empresa', $id)->value('senha');
+        if(bcrypt($request['password']) == $senha_empresa){
+           Empresa::find($id)->update([
+                'nome' =>  $request['nome'],
+                'cep' => $request['cep'],
+                'rua' =>  $request['rua'],
+                'cidade' =>  $request['cidade'],
+                'bairro' =>   $request['bairro'],
+                'numero' =>   $request['numero'],
+                'estado' =>   $request['estado'],
+            ]);
+
+            return redirect('/empresa');
+        }else{
+            //mensagemde erro
             return redirect()->back();
         }
-        $data=$request->only(['id']);
-        $empresas->update($data);
-        return redirect()->route('');
 
         
     }
@@ -116,16 +127,20 @@ class EmpresaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request, $id)
-    {
-        $empresa= $this->repository->find($id);
-        if(!$empresa)
-        {
-            return redirect()->back();
-        }
-        $data=$request->only('ativo');
-        $empresas->update($data);
-
-        return redirect()->route('');
-    }
+     public function delete($id)
+     {
+         
+         $senha_empresa = DB::table('empresas')->where('id_empresa', $id)->value('senha');
+         if(bcrypt($request['password']) == $senha_empresa ){
+             Empresa::find($id)->update([
+                 'ativo' => 'n'
+             ]);
+ 
+             return redirect('/welcome');//colocar o pra home 
+         }else{
+             //colocar a mensagem de erro 
+             return redirect()->back();
+         }
+ 
+     }
 }
