@@ -10,8 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('session', 'SessionController@session');
+ 
+Route::get('session', 'SessionController@session'); 
 
 Route::get('/', function () {
     return view('welcome');
@@ -31,12 +31,16 @@ Route::get('/cadastro_user',function(){
 });
 Route::post('/cad_user', 'UsuarioController@create');
 Route::get('/users', 'UsuarioController@index');
-Route::get('/alt_user', 'UsuarioController@show');
-Route::get('/del_user', 'UsuarioController@del');
-Route::get('/update_user', 'UsuarioController@update');
-Route::get('/delete_user', 'UsuarioController@delete');
+
+Route::get('/alt_user/{id}', 'UsuarioController@show');
+Route::get('/del_user/{id}', 'UsuarioController@del');
+
+Route::post('/update_user/{id}', 'UsuarioController@update');
+Route::post('/delete_user/{id}', 'UsuarioController@delete');
 
 //Rotas Empresa
 Route::get('/cadastro', 'EmpresaController@create');
 Route::post('/cadastro_empresa', 'EmpresaController@store');
 Route::get('/editar/{id}', 'EmpresaController@edit');
+
+

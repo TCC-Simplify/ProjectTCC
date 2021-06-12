@@ -51,7 +51,7 @@ class EmpresaController extends Controller
             'numero' =>  $request['numero'],
             'complemento' =>  $request['complemento'],
             'estado' =>  $request['estado'],
-            'senha' => bcrypt( $request['senha']),
+            'senha' => bcrypt($request['senha']),
             'ativo'=> 's'
         ]);
 

@@ -2,6 +2,28 @@
     padding-top: 80px;
 }
 
+.m-users .header{
+    display:flex;
+}
+
+.m-users .header a{
+    text-decoration: none;
+    color: rgb(182, 182, 182);
+    margin: auto;
+}
+.m-users .header a:hover{
+    color: rgb(126, 119, 119);
+}
+
+.m-users .header .volt{
+    margin-left: 100px;
+}
+
+.m-users .header .ir{
+    margin-right: 100px;
+}
+
+
 .m-users h1{
     margin-bottom: 50px;
 }

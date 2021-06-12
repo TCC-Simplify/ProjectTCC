@@ -24,6 +24,11 @@
 
 @section('direita')
     <div class="direita m-users">
+        <div class="header">
+            <a href="{{ redirect()->back() }}" class="volt"><p>&#8592;  Voltar</p></a>
+            <a href="{{ url('/users_des') }}" class="ir"><p>Usuários desativados &#8594;</p></a>   
+        </div>
+
         <h1>Exibindo usuários</h1>
 
         <table class="table table-striped table-red">
@@ -35,21 +40,23 @@
             </thead>
 
             @foreach($todos as $user)
-                <tbody>
-                    <td>{{ $user->name }}</td>
-                    <td>{{ $user->funcao }}</td>
-                    <td><?php 
-                       $aux = $user->permissao;
-                       if($aux == 1){
-                           echo 'Administrador';
-                       }else if($aux == 2){
-                            echo 'Gerente';
-                       }else{
-                            echo 'Funcionário';
-                       }
-                    ?></td>
-                    <td><a href="{{ route('/alt_user', $user->id) }}"><i class="fas fa-user-edit ed"></i></a>&nbsp &nbsp &nbsp<a href="{{ route('/del_user', $user->id) }}"><i class="fas fa-user-times de"></i></a></td>
-                </tbody>
+                @if($user->ativo == 's')
+                    <tbody>
+                        <td>{{ $user->name }}</td>
+                        <td>{{ $user->funcao }}</td>
+                        <td><?php 
+                        $aux = $user->permissao;
+                        if($aux == 1){
+                            echo 'Administrador';
+                        }else if($aux == 2){
+                                echo 'Gerente';
+                        }else{
+                                echo 'Funcionário';
+                        }
+                        ?></td>
+                        <td><a href="{{ url('/alt_user', $user->id) }}"><i class="fas fa-user-edit ed"></i></a>&nbsp &nbsp &nbsp<a href="{{ url('/del_user', $user->id) }}"><i class="fas fa-user-times de"></i></a></td>
+                    </tbody>
+                @endif
             @endforeach
         </table>
 

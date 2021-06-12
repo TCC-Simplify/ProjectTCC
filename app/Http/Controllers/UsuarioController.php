@@ -6,9 +6,11 @@ use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
+use DB;
 
 class UsuarioController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -21,8 +23,8 @@ class UsuarioController extends Controller
      
      public function index()
      {
-         $todos = User::latest()->paginate(3);
-         return view('users/mostrar_todos', [
+        $todos = User::latest()->paginate(3);
+        return view('users/mostrar_todos', [
             'todos' => $todos,
         ]);
      }
@@ -69,33 +71,46 @@ class UsuarioController extends Controller
       */
 
     public function show($id){
-        if(!$user = $this->repository->find($id))
-            return redirect()->back();
-            
-        return view('users/alt_users', [
-           'user' => $user,
-       ]);
+        $usuario = User::find($id);
+        // carrega o registro (realiza um select e um fetch internamente)
+        return view('users/alt_users',compact('usuario'));
     }
 
-    public function edit($id)
-    {
-        $user= $this->repository->find($id);
-        if(!$user)
-        {
-            return redirect()->back();
-        }
-         return view('alterar_dados_usuario',compact('usuario'));
+    public function del($id){
+        $usuario = User::find($id);
+        // carrega o registro (realiza um select e um fetch internamente)
+        return view('users/del_users',compact('usuario'));
     }
+
+    /**
+      * 
+      *
+      * @param  int $id
+      * @return \Illuminate\Http\Response
+      */
+
+    public function destroy($id)
+    {
+        $senha_empresa = session()->get('senha_empresa');
+        $senha_usuario = DB::table('users')->where('id', $id)->value('password');
+        if($request['password'] == $senha_usuario || $request['password'] == $senha_empresa){
+            User::find($id)->update([
+                'ativo' => 'n'
+            ]);
+        }
+
+        index();
+    }
+       
 
     public function update(Request $request, $id)
     {
-        $user= $this->repository->find($id);
-        if(!$user)
-        {
-            return redirect()->back();
+        $senha_empresa = session()->get('senha_empresa');
+        $senha_usuario = DB::table('users')->where('id', $id)->value('password');
+        if($request['password'] == $senha_usuario || $request['password'] == $senha_empresa){
+            User::find($id)->update($request->all());
         }
-        $data=$request->all();
-        $user->update($data);
-        return redirect()->route('');
+
+        show($id);
     }
 }

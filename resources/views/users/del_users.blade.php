@@ -25,34 +25,34 @@
 @section('direita')
     <div class="direita cad_user">
 
-        <h1>Alteração de usuário</h1>
+        <h1>Desativando usuário</h1>
 
-        <form action="{{ url('/update_user', $usuario->id)}}" method="POST" enctype="multipart/form-data" class="form-cad"> 
+        <form action="{{ url('/delete_user', $usuario->id)}}" method="POST" enctype="multipart/form-data" class="form-cad"> 
             <div class="form-group">
 
                 {{ csrf_field() }}
 
-                <input type="text" class="form-control cad-tam" name="name" placeholder="Nome:" value="{{ $usuario->name }}">
+                <input type="text" class="form-control cad-tam" name="name" placeholder="Nome:" value="{{ $usuario->name }}" disabled>
             </div>
 
             <div class="form-group">
 
-                <input type="text" class="form-control cad-tam" name="email" placeholder="Email:" value="{{ $usuario->email}}">
+                <input type="text" class="form-control cad-tam" name="email" placeholder="Email:" value="{{ $usuario->email}}" disabled>
             </div>
 
             <div class="form-group">
 
-                <input type="text" class="form-control cad-tam" name="cpf" placeholder="CPF:" value="{{ $usuario->cpf }}">
+                <input type="text" class="form-control cad-tam" name="cpf" placeholder="CPF:" value="{{ $usuario->cpf }}" disabled>
             </div>
 
             <div class="form-group">
 
-                <input type="text" class="form-control cad-tam" name="dt_nasc" placeholder="Data de nascimento:" value="{{ $usuario->dt_nasc }}">
+                <input type="text" class="form-control cad-tam" name="dt_nasc" placeholder="Data de nascimento:" value="{{ $usuario->dt_nasc }}" disabled>
             </div>
 
             <div class="form-group">
 
-                <input type="text" class="form-control cad-tam" name="funcao" placeholder="Setor:" value="{{ $usuario->funcao }}">
+                <input type="text" class="form-control cad-tam" name="funcao" placeholder="Setor:" value="{{ $usuario->funcao }}" disabled>
             </div>
 
             <div class="form-group dec">
@@ -64,7 +64,7 @@
                     }else{
                         echo "Funcionario";
                     }
-                ?>">
+                ?>" disabled>
             </div>
 
             <div class="form-group">
@@ -72,7 +72,7 @@
             </div>
 
             <div id="botao">
-                <input type="submit" name="botao" value="Alterar" class="btn-cad" />
+                <input type="submit" name="botao" value="Desativar" class="btn-cad" />
             </div>
 
         </form>
