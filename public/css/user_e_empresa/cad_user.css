@@ -1,0 +1,108 @@
+.cad_user{
+    padding-top: 90px;
+}
+
+.cad-tam{
+    width: 600px;
+}
+
+.form-cad{
+    width: 800px;
+    padding: 0 100px;
+    margin: 40px auto;
+}
+
+.btn-cad{
+    align-items: center;
+    align-content: center;
+    width: 600px;
+    height: 50px;
+    border-radius: 4px;
+    color: black;
+    background-color: rgb(95, 185, 151);
+    cursor: pointer;
+    margin-top: 30px;
+    font-weight: bold;
+}
+
+.btn-cad:hover, .btn-email:hover{
+    background-color: rgb(58, 141, 109);
+    background-color: rgb(58, 141, 109);
+}
+
+
+/* Estilo iOS */
+.switch__container {
+    margin: 30px auto;
+}
+  
+.switch {
+    visibility: hidden;
+    position: absolute;
+    margin-left: -9999px;
+}
+  
+.switch + label {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    user-select: none;
+}
+
+.switch--flat + label {
+    padding: 2px;
+    width: 90px;
+    height: 50px;
+    background-color: #7ab6ee;
+    border-radius: 60px;
+    transition: background 0.4s;
+}
+.switch--flat + label:before,
+.switch--flat + label:after {
+    display: block;
+    position: absolute;
+    content: "";
+}
+.switch--flat + label:before {
+    top: 2px;
+    left: 2px;
+    bottom: 2px;
+    right: 2px;
+    background-color: #fff;
+    border-radius: 60px;
+    transition: background 0.4s;
+}
+.switch--flat + label:after {
+    top: 4px;
+    left: 4px;
+    bottom: 4px;
+    width: 40px;
+    background-color: #7ab6ee;
+    border-radius: 50px;
+    transition: margin 0.4s, background 0.4s;
+}
+.switch--flat:checked + label {
+    background-color: #ddaf72;
+}
+.switch--flat:checked + label:after {
+    margin-left: 42px;
+    background-color: #ddaf72;
+}
+
+.dec{
+    display: flex;
+}
+
+.dec div p{
+    font-size: 30px;
+    margin-top: 35px;
+}
+
+.func{
+    margin-left: 20px;
+}
+
+.ger{
+    padding-right: 20px;
+}

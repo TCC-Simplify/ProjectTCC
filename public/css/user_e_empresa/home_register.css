@@ -1,14 +1,18 @@
 .home_register{
-    padding-top: 150px;
+    padding-top: 180px;
 }
 
 .reg-bot{
     width: 400px;
-    margin: 30px auto;
+    margin: 30px auto 10px auto;
     padding: 15px 0;
     border-radius: 4px;
     color: white;
     background-color: rgb(95, 185, 151);
     cursor: pointer;
     text-decoration: none;
+}
+
+.reg-bot:hover{
+    background-color: rgb(79, 151, 124);
 }

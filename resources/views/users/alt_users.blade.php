@@ -27,8 +27,8 @@
 
         <h1>Cadastro de usuários</h1>
 
-        <form action="{{ url('/cad_user')}}" method="POST" enctype="multipart/form-data" class="form-cad">
-
+        <form action="{{ route('/update_user', $id)}}" method="POST" enctype="multipart/form-data" class="form-cad">
+            @method('PUT')    
             <div class="form-group">
 
                 {{ csrf_field() }}

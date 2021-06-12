@@ -21,7 +21,10 @@ class UsuarioController extends Controller
      
      public function index()
      {
-         //
+         $todos = User::latest()->paginate(3);
+         return view('users/mostrar_todos', [
+            'todos' => $todos,
+        ]);
      }
  
      /**
@@ -33,20 +36,46 @@ class UsuarioController extends Controller
      public function create(Request $request)
      {       
         $id = session()->get('id_empresa');
+
+        if(isset($request['permissao']))
+        {
+            $checkbox = 2;
+        }
+        else
+        {
+            $checkbox = 3;
+        }
+
         User::create([
              'name' =>  $request['name'],
              'email' =>  $request['email'],
              'cpf' => $request['cpf'],
              'dt_nasc' =>  $request['dt_nasc'],
              'funcao' =>  $request['funcao'],
-             'permissao' =>   $request['permissao'],
+             'permissao' =>   $checkbox,
              'password' => bcrypt( $request['password']),
              'ativo'=> 's',
              'empresa'=> $id
          ]);
  
-         return view('/home_register');
+         return redirect('/users');
      }
+
+    /**
+      * 
+      *
+      * @param  int $id
+      * @return \Illuminate\Http\Response
+      */
+
+    public function show($id){
+        if(!$user = $this->repository->find($id))
+            return redirect()->back();
+            
+        return view('users/alt_users', [
+           'user' => $user,
+       ]);
+    }
 
     public function edit($id)
     {

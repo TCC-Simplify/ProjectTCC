@@ -15,10 +15,10 @@
 
 @section('opcoes')
     <div class="opcoes">
-        <div class="a es"><a href="{{ url('') }}"><i class="fas fa-user-plus"></i></a></div>
+        <div class="a"><a href="{{ url('/cadastro_user') }}"><i class="fas fa-user-plus"></i></a></div>
         <div class="a"><a href="{{ url('') }}"><i class="fas fa-user-times"></i></a></div>
         <div class="a"><a href="{{ url('') }}"><i class="fas fa-user-edit"></i></a></div>
-        <div class="a"><a href="{{ url('') }}"><i class="fas fa-users"></i></a></div>
+        <div class="a"><a href="{{ url('/users') }}"><i class="fas fa-users"></i></a></div>
     </div>
 @endsection
 
@@ -26,8 +26,10 @@
     <div class="direita">
         <div class="home_register">
             <h3>Seja bem vindo! Comece cadastrando seus funcionários</h3>
-            <p>DEIXEI SÓ ISSO POR ENQUANTO MAS AINDA VOU MEXER NESSA ÁREA</p>
+            <p>A SIMPLIFY FICA FELIZ EM RECEBÊ-LO EM NOSSO SITE &#9825;</p>
             <a href="{{ url('/cadastro_user') }}"><button class="reg-bot">Começar o cadastro</button></a>
+            <br>
+            <div class="arrow" style="font-size: 200px;">&#10509;</div>
         </div>
     </div>
 @endsection

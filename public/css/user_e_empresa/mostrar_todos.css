@@ -1,0 +1,51 @@
+.m-users{
+    padding-top: 80px;
+}
+
+.m-users h1{
+    margin-bottom: 50px;
+}
+
+.m-users table{
+    width: 900px;
+    margin: auto;
+    margin-bottom: 40px;
+    color: black;
+    border: none;
+}
+
+.m-users table thead{
+    background-color: #6daae2;
+}
+
+.m-users table tbody{
+    background-color: #fff;
+}
+
+.m-users table tbody td .ed{
+    color: rgb(109, 187, 109);
+}
+.m-users table tbody td .ed:hover{
+    color: rgb(91, 146, 91);
+}
+
+.m-users table tbody td .de{
+    color: rgb(226, 72, 72);
+}
+.m-users table tbody td .de:hover{
+    color: rgb(177, 67, 67);
+}
+
+.m-users .pagination{
+    margin: auto;
+    color: #fff;
+    font-size: 25px;
+    justify-content: space-evenly;
+    width: 400px;
+    text-decoration: none;
+}
+
+.m-users .pagination a{
+    color: #8f8c8c;
+    text-decoration: none;
+}

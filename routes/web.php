@@ -21,20 +21,22 @@ Route::get('/emails', function () {
     return view('emails');
 });
 
+Route::get('/home', 'HomeController@index');
+Route::get('/log', 'LogController@index');
+Auth::routes();
+
 //rotas usuario
-Route::get('/editar/{id}', 'EmpresaController@edit');
 Route::get('/cadastro_user',function(){
     return view('users/cad_users');
 });
 Route::post('/cad_user', 'UsuarioController@create');
-
-
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index');
-Route::get('/log', 'LogController@index');
+Route::get('/users', 'UsuarioController@index');
+Route::get('/alt_user', 'UsuarioController@show');
+Route::get('/del_user', 'UsuarioController@del');
+Route::get('/update_user', 'UsuarioController@update');
+Route::get('/delete_user', 'UsuarioController@delete');
 
 //Rotas Empresa
 Route::get('/cadastro', 'EmpresaController@create');
 Route::post('/cadastro_empresa', 'EmpresaController@store');
+Route::get('/editar/{id}', 'EmpresaController@edit');

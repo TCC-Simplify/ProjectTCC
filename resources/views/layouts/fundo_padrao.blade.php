@@ -13,6 +13,8 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
         <link href="{{ url('css/user_e_empresa/home_register.css') }}" rel="stylesheet">
+        <link href="{{ url('css/user_e_empresa/cad_user.css') }}" rel="stylesheet">
+        <link href="{{ url('css/user_e_empresa/mostrar_todos.css') }}" rel="stylesheet">
 
         <!-- Styles -->
         <style>
@@ -90,7 +92,7 @@
             }
 
             .es{
-                color: rgb(37, 37, 44);
+                color: rgb(212, 212, 212);
             }
 
             #descricao{

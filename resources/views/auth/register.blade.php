@@ -64,7 +64,7 @@
             <div class="form-group{{ $errors->has('funcao') ? ' has-error' : '' }}">
 
                 <div class="col-md-6">
-                    <input id="funcao" type="text" class="form-control tam" name="funcao" placeholder="Função:" value="{{ old('funcao') }}" required>
+                    <input id="funcao" type="text" class="form-control tam" name="Setor:" placeholder="Função:" value="{{ old('funcao') }}" required>
 
                     @if ($errors->has('funcao'))
                         <span class="help-block">
