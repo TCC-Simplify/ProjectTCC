@@ -23,7 +23,7 @@ Route::get('/emails', function () {
 
 Route::get('/home', 'HomeController@index');
 Route::get('/log', 'LogController@index');
-Auth::routes();
+Auth::routes(); 
 
 //rotas usuario
 Route::get('/cadastro_user',function(){
@@ -31,10 +31,13 @@ Route::get('/cadastro_user',function(){
 });
 Route::post('/cad_user', 'UsuarioController@create');
 Route::get('/users', 'UsuarioController@index');
+Route::get('/users_des', 'UsuarioController@mostra');
 
 Route::get('/pag_user', 'UsuarioController@show');
+
 Route::get('/alt_user/{id}', 'UsuarioController@edit');
 Route::get('/del_user/{id}', 'UsuarioController@del');
+Route::get('/rea_user/{id}', 'UsuarioController@reativa');
 
 Route::post('/update_user/{id}', 'UsuarioController@update');
 Route::post('/delete_user/{id}', 'UsuarioController@delete');
@@ -43,6 +46,11 @@ Route::post('/delete_user/{id}', 'UsuarioController@delete');
 Route::get('/empresa', 'EmpresaController@show');
 Route::get('/cadastro', 'EmpresaController@create');
 Route::post('/cadastro_empresa', 'EmpresaController@store');
-Route::get('/editar/{id}', 'EmpresaController@edit');
+
+Route::get('/editar_empresa/{id}', 'EmpresaController@edit');
+Route::get('/del_empresa/{id}', 'EmpresaController@mostra');
+
+Route::post('/update_empresa/{id}', 'EmpresaController@update');
+Route::post('/delete_empresa/{id}', 'EmpresaController@delete');
 
 

@@ -25,7 +25,7 @@
 @section('direita')
     <div class="direita m-users">
         <div class="header">
-            <a href="{{ url('/users_des') }}" class="ir"><p>Usuários desativados &#8594;</p></a>   
+            <a href="{{ url()->previous() }}" class="volt"><p>&#8592;  Voltar</p></a>   
         </div>
 
         <h1>Exibindo usuários</h1>
@@ -39,7 +39,7 @@
             </thead>
 
             @foreach($todos as $user)
-                @if($user->ativo == 's')
+                @if($user->ativo == 'n')
                     <tbody>
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->funcao }}</td>
@@ -53,7 +53,7 @@
                                 echo 'Funcionário';
                         }
                         ?></td>
-                        <td><a href="{{ url('/alt_user', $user->id) }}"><i class="fas fa-user-edit ed"></i></a>&nbsp &nbsp &nbsp<a href="{{ url('/del_user', $user->id) }}"><i class="fas fa-user-times de"></i></a></td>
+                        <td><a href="{{ url('/rea_user', $user->id) }}"><i class="fas fa-user-check ed"></i></a></td>
                     </tbody>
                 @endif
             @endforeach

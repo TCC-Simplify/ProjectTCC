@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use DB;
 
-class RegisterController extends Controller
+class RegisterController extends Controller 
 {
     /*
     |--------------------------------------------------------------------------
@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    //protected $redirectTo = '/home';
 
     /**
      * Create a new controller instance.
@@ -76,8 +76,5 @@ class RegisterController extends Controller
             'ativo'=> 's', 
             'empresa' => $id
         ]);
-
-        $id_user = DB::table('users')->where('email', $data['email'])->value('id');
-        session()->put('id_user', $id_user);
     }
 }

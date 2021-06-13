@@ -24,6 +24,11 @@
 
 @section('direita')
     <div class="direita">
+        <?php
+            $id_user = DB::table('users')->where('email', Auth::user()->email)->value('id');
+            session()->put('id_user', $id_user);
+        ?>
+
         <div class="home_register">
             <h3>Seja bem vindo! Comece cadastrando seus funcionários</h3>
             <p>A SIMPLIFY FICA FELIZ EM RECEBÊ-LO EM NOSSO SITE &#9825;</p>

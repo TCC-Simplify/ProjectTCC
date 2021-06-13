@@ -33,8 +33,16 @@ class UsuarioController extends Controller
      
      public function index()
      {
-        $todos = User::latest()->paginate(15);
+        $todos = User::where('empresa', session()->get('id_empresa'))->latest()->paginate(15);
         return view('users/mostrar_todos', [
+            'todos' => $todos,
+        ]);
+     }
+
+     public function mostra()
+     {
+        $todos = User::where('empresa', session()->get('id_empresa'))->latest()->paginate(15);
+        return view('users/des_user', [
             'todos' => $todos,
         ]);
      }
@@ -83,7 +91,7 @@ class UsuarioController extends Controller
 
     public function show(){
         $id = session()->get('id_user');
-        $usuario = DB::table('empresas')->where('id', $id);
+        $usuario = User::find($id);
         // carrega o registro (realiza um select e um fetch internamente)
         return view('users/pag_user',compact('usuario'));
     }
@@ -107,6 +115,14 @@ class UsuarioController extends Controller
         return view('users/del_users',compact('usuario'));
     }
 
+    public function reativa($id){
+        User::find($id)->update([
+            'ativo' => 's'
+        ]);
+
+        return redirect('/users');
+    }
+
     /**
       * 
       *
@@ -114,7 +130,7 @@ class UsuarioController extends Controller
       * @return \Illuminate\Http\Response
       */
 
-    public function delete($id)
+    public function delete(Request $request, $id)
     {
         $senha_empresa = session()->get('senha_empresa');
         $senha_usuario = DB::table('users')->where('id', $id)->value('password');

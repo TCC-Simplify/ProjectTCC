@@ -30,6 +30,39 @@
     background-color: rgb(58, 141, 109);
 }
 
+.btn-alt-emp{
+    align-items: center;
+    align-content: center;
+    width: 250px;
+    height: 50px;
+    border-radius: 4px;
+    color: black;
+    background-color: rgb(95, 185, 151);
+    cursor: pointer;
+    margin-top: 30px;
+    font-weight: bold;
+}
+
+.btn-alt-emp:hover, .btn-email:hover{
+    background-color: rgb(58, 141, 109);
+}
+
+.btn-del-emp{
+    align-items: center;
+    align-content: center;
+    width: 250px;
+    height: 50px;
+    border-radius: 4px;
+    color: black;
+    background-color: rgb(185, 95, 95);
+    cursor: pointer;
+    margin-top: 30px;
+    font-weight: bold;
+}
+
+.btn-del-emp:hover, .btn-email:hover{
+    background-color: rgb(148, 60, 60);
+}
 
 /* Estilo iOS */
 .switch__container {
@@ -108,6 +141,22 @@
 }
 
 select{
-    width:40px;
-    
+    width: 600px;
+}
+
+.cad_user .header{
+    display:flex;
+}
+
+.cad_user .header a{
+    text-decoration: none;
+    color: rgb(182, 182, 182);
+    margin: auto;
+}
+.cad_user .header a:hover{
+    color: rgb(126, 119, 119);
+}
+
+.cad_user .header .volt{
+    margin-left: 100px;
 }

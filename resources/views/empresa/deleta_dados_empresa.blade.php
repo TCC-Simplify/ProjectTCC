@@ -22,44 +22,44 @@
 
 @section('direita')
     <div class="direita cad_user">
-        <h1>Alterar dados da empresa</h1>
-        <form action="{{ url('/update_empresa', $empresa->id)}}" method="POST" enctype="multipart/form-data" class="form-cad">
+        <h1>Desativar empresa</h1>
+        <form action="{{ url('/delete_empresa', $empresa->id)}}" method="POST" enctype="multipart/form-data" class="form-cad">
             <div class="form-group">
             {{ csrf_field() }}
-            <input type="text" class="form-control" name="nome" placeholder="Nome:" value="{{ $empresa->nome }}" required>
+            <input type="text" class="form-control" name="nome" placeholder="Nome:" value="{{ $empresa->nome }}" disabled>
             </div>
 
             <div class="form-group">
-                <input type="text" class="form-control" name="cnpj" id="cnpj" placeholder="CNPJ:" value="{{ $empresa->cnpj }}" required>
+                <input type="text" class="form-control" name="cnpj" id="cnpj" placeholder="CNPJ:" value="{{ $empresa->cnpj }}" disabled>
             </div>
             
             <div class="form-group">
-                <input type="text" class="form-control" name="cep" placeholder="CEP:" id="cep" value="{{ $empresa->cep }}" required>
+                <input type="text" class="form-control" name="cep" placeholder="CEP:" id="cep" value="{{ $empresa->cep }}" disabled>
             </div>
 
             <div class="form-group">
-                <input type="text" class="form-control" name="estado" placeholder="Estado:" id="uf" value="{{ $empresa->estado }}" required>
+                <input type="text" class="form-control" name="estado" placeholder="Estado:" id="uf" value="{{ $empresa->estado }}" disabled>
             </div>
 
             <div class="form-group">
-                <input type="text" class="form-control" name="cidade" id="cidade" placeholder="Cidade:" value="{{ $empresa->cidade }}" required>
+                <input type="text" class="form-control" name="cidade" id="cidade" placeholder="Cidade:" value="{{ $empresa->cidade }}" disabled>
             </div>
 
             <div class="form-group">
-                <input type="text" class="form-control" name="bairro" id="bairro" placeholder="Bairro:" value="{{ $empresa->bairro }}" required>
+                <input type="text" class="form-control" name="bairro" id="bairro" placeholder="Bairro:" value="{{ $empresa->bairro }}" disabled>
             </div>
             
             <div class="form-group">
-                <input type="text" class="form-control" name="rua" id="endereco" placeholder="Rua:" value="{{ $empresa->rua }}" required>
+                <input type="text" class="form-control" name="rua" id="endereco" placeholder="Rua:" value="{{ $empresa->rua }}" disabled>
             </div>
 
 
             <div class="form-group">
-                <input type="text" class="form-control" name="numero" placeholder="N°:" value="{{ $empresa->numero }}" required>
+                <input type="text" class="form-control" name="numero" placeholder="N°:" value="{{ $empresa->numero }}" disabled>
             </div>
 
             <div class="form-group">
-                <input type="text" class="form-control" name="complemento" placeholder="Complemento:" value="{{ $empresa->complemento }}">
+                <input type="text" class="form-control" name="complemento" placeholder="Complemento:" value="{{ $empresa->complemento }}" <?php if($empresa->complemento == null) echo 'style="display: none;"'?> disabled>
             </div>
             
             <div class="form-group">
@@ -67,7 +67,7 @@
             </div>
 
             <div id="botao">
-                <input type="submit" name="botao" value="Alterar" class="btn-cad" />
+                <input type="submit" name="botao" value="Desativar" class="btn-cad" />
             </div>
         </form>
     </div>

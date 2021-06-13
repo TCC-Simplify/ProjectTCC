@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Empresa;
 use DB;
 
+
+
 class EmpresaController extends Controller
 {
    /**
@@ -17,6 +19,10 @@ class EmpresaController extends Controller
     protected $request;
     private $repository;
 
+    public function __construct(Empresa $empresa)
+    {
+        $this->empresa = $empresa;
+    }
     
     public function index()
     {
@@ -55,7 +61,7 @@ class EmpresaController extends Controller
             'ativo'=> 's'
         ]);
 
-        $id_empresa = DB::table('empresas')->where('cnpj', $request['cnpj'])->value('id_empresa');
+        $id_empresa = DB::table('empresas')->where('cnpj', $request['cnpj'])->value('id');
         session()->put('id_empresa', $id_empresa);
         session()->put('senha_empresa', $request['senha']);
 
@@ -63,15 +69,15 @@ class EmpresaController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Store a newly created resource in storage.
      *
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function show(){
         $id = session()->get('id_empresa');
-        $dados = DB::table('empresas')->where('id_empresa', $id);
-        return view('empresa/empresa',compact('dados'));
+        $empresa = Empresa::find($id);
+         return view('empresa/empresa',compact('empresa'));
     }
 
     /**
@@ -82,12 +88,28 @@ class EmpresaController extends Controller
      */
     public function edit($id)
     {
-        $empresa= $this->repository->find($id);
+        $empresa= Empresa::find($id);
         if(!$empresa)
         {
             return redirect()->back();
         }
-        return view('alterar_dados_empresa',compact('empresa'));
+        return view('empresa/alterar_dados_empresa',compact('empresa'));
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function mostra($id)
+    {
+        $empresa= Empresa::find($id);
+        if(!$empresa)
+        {
+            return redirect()->back();
+        }
+        return view('empresa/deleta_dados_empresa',compact('empresa'));
     }
 
     /**
@@ -99,9 +121,9 @@ class EmpresaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //senha_empresa = session()->get('senha_empresa');
-        $senha_empresa = DB::table('empresa')->where('id_empresa', $id)->value('senha');
-        if(bcrypt($request['password']) == $senha_empresa){
+        $senha_empresa = session()->get('senha_empresa');
+
+        if($request['password'] == $senha_empresa){
            Empresa::find($id)->update([
                 'nome' =>  $request['nome'],
                 'cep' => $request['cep'],
@@ -110,6 +132,7 @@ class EmpresaController extends Controller
                 'bairro' =>   $request['bairro'],
                 'numero' =>   $request['numero'],
                 'estado' =>   $request['estado'],
+                'complemento' =>   $request['complemento'],
             ]);
 
             return redirect('/empresa');
@@ -127,16 +150,16 @@ class EmpresaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-     public function delete($id)
+     public function delete(Request $request, $id)
      {
-         
-         $senha_empresa = DB::table('empresas')->where('id_empresa', $id)->value('senha');
-         if(bcrypt($request['password']) == $senha_empresa ){
+         $senha_empresa = session()->get('senha_empresa');
+
+         if($request['password'] == $senha_empresa ){
              Empresa::find($id)->update([
                  'ativo' => 'n'
              ]);
  
-             return redirect('/welcome');//colocar o pra home 
+             return redirect('/');//colocar o pra home 
          }else{
              //colocar a mensagem de erro 
              return redirect()->back();

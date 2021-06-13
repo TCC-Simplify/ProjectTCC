@@ -100,7 +100,7 @@
                 @if (Route::has('login'))
                 <div class="links">
                     @if (Auth::check())
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a href="{{ url('/users') }}">Home</a>
                     @else
                         <a href="{{ url('/') }}">Voltar</a>
                     @endif

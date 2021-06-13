@@ -3,7 +3,7 @@
 @section('links')
     <div class="links">
         <a href="{{ url('') }}" style="color: rgb(38, 109, 82);">Usuários</a>
-        <a href="{{ url('') }}">Empresa</a>
+        <a href="{{ url('/empresa') }}">Empresa</a>
         <a href="{{ url('') }}">Controle</a>
         <a class="log" href="{{ url('/logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();" onmouseover="getElementById('descricao').style.display='block'" onmouseout="getElementById('descricao').style.display='none'"><i class="fas fa-sign-out-alt"></i></a>
         <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
@@ -24,6 +24,9 @@
 
 @section('direita')
     <div class="direita cad_user">
+        <div class="header">
+            <a href="{{ url()->previous() }}" class="volt"><p>&#8592;  Voltar</p></a>   
+        </div>
 
         <h1>Desativando usuário</h1>
 
