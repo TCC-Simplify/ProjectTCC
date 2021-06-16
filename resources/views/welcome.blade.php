@@ -172,7 +172,7 @@
                         <a href="{{ url('/login') }}">Login</a>
                     @endif
                 </div>
-            @endif
+                @endif
             </div>
         </div>
 
