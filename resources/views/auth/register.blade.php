@@ -78,7 +78,7 @@
 
                 <div class="col-md-6">
                     <input id="password" type="password" placeholder="Senha:" class="form-control tam" name="password" required>
-
+                    <button type="button" onclick="mostrarSenha()" class="ver"><i class="fas fa-eye"></i></button>
                     @if ($errors->has('password'))
                         <span class="help-block">
                             <strong>{{ $errors->first('password') }}</strong>
@@ -91,7 +91,7 @@
 
                 <div class="col-md-6">
                     <input id="password-confirm" type="password" placeholder="Confime sua senha:" class="form-control tam" name="password_confirmation" required>
-                    
+                    <button type="button" onclick="mostrarSenha2()" class="ver"><i class="fas fa-eye"></i></button>
                 </div>
             </div>
 
@@ -104,5 +104,12 @@
             </div>
         </form>
 </div>
+
+<script>
+$(document).ready(function(){
+		$("#cpf").mask("999.999.999-99");
+	});
+
+</script>
 @endsection
 

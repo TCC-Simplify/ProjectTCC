@@ -68,6 +68,7 @@
 
             <div class="form-group">
                 <p class="cad-sen-p">Confirme a senha:</p><input id="password" type="password" placeholder="Senha:" class="form-control tam" name="password" required>
+                <button type="button" onclick="mostrarSenha()" class="ver"><i class="fas fa-eye"></i></button>
             </div>
 
             <div id="botao">
