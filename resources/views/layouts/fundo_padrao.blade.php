@@ -16,6 +16,14 @@
         <link href="{{ url('css/user_e_empresa/cad_user.css') }}" rel="stylesheet">
         <link href="{{ url('css/user_e_empresa/mostrar_todos.css') }}" rel="stylesheet">
 
+        <!-- Scripts js -->
+        <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@vsilva472/jquery-viacep/dist/jquery-viacep.min.js"></script>
+        <script src="<?php echo asset('js/jquery.maskedinput-1.1.4.pack.js')?>" type="text/javascript"></script>
+        <script src="<?php echo asset('js/funcs_cad_empresa.js')?>">
+         <script src="<?php echo asset('js/funcs_cad_profissional.js')?>">
+        </script> 
+
         <!-- Styles -->
         <style>
             html, body {
