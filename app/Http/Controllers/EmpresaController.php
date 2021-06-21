@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Empresa;
 use DB;
+use Illuminate\Support\Facades\Validator;
 
 
 
@@ -46,7 +47,21 @@ class EmpresaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {       
+    {     
+        $mensagens= [
+            'nome.required'=> 'o nome é obrigatorio!',
+            'cnpj.required'=> 'o CNPJ é obrigatorio',
+            'senha.min'=> 'A senha deve ter no mínimo 8 caracteres'
+        ];
+        
+       $validate= validator($request, $this->empresa->rules, $mensagens);
+       if($validate->fails()){
+           return redirect()->back()
+           ->withErrors($validate)
+           ->withInput();
+
+       }
+        
         Empresa::create([
             'nome' =>  $request['nome'],
             'cnpj' => $request['cnpj'],
