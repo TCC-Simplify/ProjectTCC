@@ -54,13 +54,13 @@ class EmpresaController extends Controller
             'senha.min'=> 'A senha deve ter no mínimo 8 caracteres'
         ];
         
-       $validate= validator($request, $this->empresa->rules, $mensagens);
+       /*$validate= validator($request, $this->empresa->rules, $mensagens);
        if($validate->fails()){
            return redirect()->back()
            ->withErrors($validate)
            ->withInput();
 
-       }
+       }*/
         
         Empresa::create([
             'nome' =>  $request['nome'],
@@ -173,12 +173,12 @@ class EmpresaController extends Controller
              Empresa::find($id)->update([
                  'ativo' => 'n'
              ]);
- 
-             return redirect('/');//colocar o pra home 
-         }else{
+             return  redirect()->route('logout');
+         }
+            else
              //colocar a mensagem de erro 
              return redirect()->back();
-         }
+         
  
      }
 }
