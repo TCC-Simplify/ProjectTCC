@@ -14,7 +14,6 @@ livre para realizar outras tarefas.</h4>
     <li>JavaScript</li>
     <li>HTML5</li>
     <li>PHP</li>
-    <li>JavaScript</li>
     <li>MySQL</li>
     <li>Laravel</li>
   </ul>
