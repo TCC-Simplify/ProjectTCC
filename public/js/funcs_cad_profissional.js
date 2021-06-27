@@ -76,5 +76,23 @@ $("#cep").blur(function(){
 	});
 });
 
+function mostrarSenha(){
+	var tipo = document.getElementById("password");
+	if(tipo.type == "password"){
+		tipo.type = "text";
+	}else{
+		tipo.type = "password";
+	}
+}
+
+function mostrarSenha2(){
+	var tipo = document.getElementById("confirm_password");
+	if(tipo.type == "password"){
+		tipo.type = "text";
+	}else{
+		tipo.type = "password";
+	}
+}
+
 
 

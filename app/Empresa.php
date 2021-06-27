@@ -24,9 +24,5 @@ class Empresa extends Model
       'cidade'=> 'required'
     ];
 
-    public $mensagens= [
-        'nome.required'=> 'o nome é obrigatorio!',
-        'cnpj.required'=> 'o CNPJ é obrigatorio',
-        'senha.min'=> 'A senha deve ter no mínimo 8 caracteres'
-    ];
+   
 }
