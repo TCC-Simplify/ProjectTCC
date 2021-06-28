@@ -47,12 +47,12 @@
     <input type="text" class="form-control" name="complemento" placeholder="Complemento:" value="{{ $empresa->complemento ?? old('complemento') }}">
 </div>
 
-<div class="form-group">
+<div class="form-grou">
     <input type="password" class="form-control" id="senha" name="senha" placeholder="Senha da empresa:" value="{{ $empresa->senha ?? old('senha') }}" required>
     <button type="button" onclick="mostrarSenha()" class="ver"><i class="fas fa-eye"></i></button>
 </div>
 
-<div class="form-group">
+<div class="form-group pas">
     <input type="password" class="form-control" id="senha2" name="confirma_senha" placeholder="Confirma senha:" value="{{ $empresa->confirma_senha ?? old('confirma_senha')   }}" required>
     <button type="button" onclick="mostrarSenha2()" class="ver"><i class="fas fa-eye"></i></button>
 </div>

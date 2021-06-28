@@ -3,7 +3,7 @@ body {
 }
 
 
-.tudo{
+.tudo {
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -22,14 +22,15 @@ body {
     border-radius: 15px;
 }
 
-.tam{
+.tam {
     width: 600px;
 }
 
-.header{
+.header {
     display: flex;
 }
-.volt{
+
+.volt {
     float: left;
     margin-right: 370px;
     margin-top: 10px;
@@ -37,49 +38,54 @@ body {
     font-weight: bold;
     color: #555;
 }
-.volt:hover{
+
+.volt:hover {
     text-decoration: none;
     color: rgb(58, 141, 109);
 }
 
-.ir{
+.ir {
     float: right;
     margin-left: 215px;
     text-decoration: none;
     font-weight: bold;
     color: #555;
 }
-.ir:hover{
+
+.ir:hover {
     text-decoration: none;
     color: rgb(58, 141, 109);
 }
 
-.etapas{
+.etapas {
     display: flex;
     justify-content: space-around;
 }
- 
-.etapas h4{
+
+.etapas h4 {
     margin-top: 15px;
 }
 
-.fil-2{
+.fil-2 {
     display: flex;
 }
 
-#cep{
+#cep {
     width: 400px;
 }
 
-#endereco{
+#endereco {
     width: 450px;
 }
 
-#bairro{
+#bairro {
     width: 350px;
 }
 
-#botao{ text-align: center }
+#botao {
+    text-align: center
+}
+
 .btn-enviar {
     align-items: center;
     align-content: center;
@@ -91,12 +97,13 @@ body {
     cursor: pointer;
 }
 
-.btn-enviar:hover, .btn-email:hover{
+.btn-enviar:hover,
+.btn-email:hover {
     background-color: rgb(58, 141, 109);
     background-color: rgb(58, 141, 109);
 }
 
-.btn-email{
+.btn-email {
     align-items: center;
     align-content: center;
     width: 600px;
@@ -108,31 +115,52 @@ body {
     border: none;
     outline: none;
 }
-.email{
+
+.email {
     height: 500px;
 }
 
-.inp-email{
+.inp-email {
     margin-top: 80px
 }
 
-.inp-reset{
+.inp-reset {
     margin-top: 40px;
 }
 
-.aut{
+.aut {
     margin-left: 200px;
     margin-top: 10px;
 }
 
-.em{
+.em {
     margin-top: 40px;
 }
 
-.se{
+.se {
     margin-bottom: 40px;
 }
 
-.link{
+.link {
     margin-left: 195px;
+}
+
+.pas {
+    margin-top: 20px;
+}
+
+.ver {
+    position: absolute;
+    margin-top: -42px;
+    margin-left: 570px;
+    border: none;
+    color: rgb(107, 106, 106);
+    background-color: transparent;
+    cursor: pointer;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.ver:hover {
+    color: rgb(95, 185, 151);
 }
