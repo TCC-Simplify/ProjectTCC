@@ -9,7 +9,7 @@
         <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
             {{ csrf_field() }}
         </form>
-        <div id="descricao">Sair</div>
+       <!--<div id="descricao" name="descricao">Sair</div>-->
     </div>
 @endsection
 

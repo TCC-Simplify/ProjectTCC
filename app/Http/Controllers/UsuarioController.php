@@ -76,7 +76,8 @@ class UsuarioController extends Controller
              'permissao' =>   $checkbox,
              'password' => bcrypt( $senha ),
              'ativo'=> 's',
-             'empresa'=> $id
+             'empresa'=> $id,
+             'aux' => 0
          ]);
  
          return redirect('/users');

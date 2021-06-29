@@ -51,6 +51,7 @@
                         </div>
 
                         <div class="form-group">
+                        <center>
                             <div class="fil">
                                 <button type="submit" class="btn-enviar aut">
                                     Entrar
@@ -59,9 +60,10 @@
 
                             <br>
 
-                            <a class="link" href="{{ url('/password/reset') }}">
-                                Esqueceu sua senha?
-                            </a>
+                                <a href="{{ url('/password/reset') }}">
+                                    Esqueceu sua senha?
+                                </a>
+                            </center>
 
                             <hr>
 

@@ -74,7 +74,8 @@ class RegisterController extends Controller
             'permissao' => $data['permissao'],
             'password' => bcrypt($data['password']),
             'ativo'=> 's', 
-            'empresa' => $id
+            'empresa' => $id,
+            'aux' => 1
         ]);
     }
 }

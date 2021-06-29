@@ -11,7 +11,6 @@
 |
 */
  
-Route::get('session', 'SessionController@session'); 
 
 Route::get('/', function () {
     return view('welcome');
