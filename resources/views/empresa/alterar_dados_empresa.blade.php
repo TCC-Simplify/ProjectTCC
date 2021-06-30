@@ -27,7 +27,7 @@
         <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@vsilva472/jquery-viacep/dist/jquery-viacep.min.js"></script>
         <script src="<?php echo asset('js/jquery.maskedinput-1.1.4.pack.js')?>" type="text/javascript"></script>
-        <script src="<?php echo asset('js/funcs_cad_profissional.js')?>"></script> 
+        <script src="<?php echo asset('js/funcs_cad_empresa.js')?>"></script> 
         <form action="{{ url('/update_empresa', $empresa->id)}}" method="POST" enctype="multipart/form-data" class="form-cad">
             <div class="form-group">
             {{ csrf_field() }}
@@ -47,7 +47,7 @@
             </div>
 
             <div class="form-group">
-                <input type="text" class="form-control" name="cidade" data-viacep-cidade placeholder="Cidade:" value="{{ $empresa->cidade }}" required>
+                <input type="text" class="form-control" name="cidade" data-viacep-cidade placeholder="Cidade:" id="cidade" value="{{ $empresa->cidade }}" required>
             </div>
 
             <div class="form-group">

@@ -180,7 +180,6 @@ class UsuarioController extends Controller
         if($request['password'] == $senha_empresa || bcrypt($request['password']) == $senha_usuario){
             User::find($id)->update([
                 'name' =>  $request['name'],
-                'cpf' => $request['cpf'],
                 'dt_nasc' =>  $request['dt_nasc'],
                 'funcao' =>  $request['funcao'],
                 'permissao' =>   $request['permissao'],

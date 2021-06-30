@@ -25,7 +25,7 @@
         <h1>Dados da empresa</h1>
         <div class="form-cad">
             <div class="form-group">
-            <input type="text" class="form-control" name="nome" placeholder="Nome:" value="{{ $empresa->nome }}" required>
+            <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome:" value="{{ $empresa->nome }}" required>
             </div>
 
             <div class="form-group">
