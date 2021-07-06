@@ -18,7 +18,7 @@
         <div class="a"><a href="{{ url('/pag_user') }}"><i class="fas fa-user es"></i></a></div>
         <div class="a"><a href="{{ url('/cadastro_user') }}"><i class="fas fa-user-plus"></i></a></div>
         <div class="a"><a href="{{ url('/users') }}"><i class="fas fa-users"></i></a></div>
-        <div class="a"><a href="{{ url('') }}"><i class="fas fa-chart-area"></i></a></div>
+        <div class="a"><a href="{{ url('/area_ponto') }}"><i class="fas fa-chart-area"></i></a></div>
     </div>
 @endsection
 
@@ -26,7 +26,7 @@
     <div class="direita cad_user">
         <h1>Página do usuário</h1>
         <br>
-        <p>Aqui estará disponível a parte de desemprenho do usuário, além da alteração e desativação da própria conta.</p>
+        <p>Aqui estará disponível a parte de desempenho do usuário, além da alteração e desativação da própria conta.</p>
         <p>Ainda não feito por que não existe a parte atividades ainda...</p>
     </div>
-@endsection
+@endsection 

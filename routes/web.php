@@ -22,6 +22,7 @@ Route::get('/emails', function () {
 
 Route::get('/home', 'HomeController@index');
 Route::get('/log', 'LogController@index');
+Route::post('/log/muda_senha', 'LogController@muda');
 Auth::routes(); 
 
 //rotas usuario
@@ -52,4 +53,8 @@ Route::get('/del_empresa/{id}', 'EmpresaController@mostra');
 Route::post('/update_empresa/{id}', 'EmpresaController@update');
 Route::post('/delete_empresa/{id}', 'EmpresaController@delete');
 
+//rotas zaneta
+Route::get('/area_ponto', function () {
+    return view('users/area_ponto');
+});
 

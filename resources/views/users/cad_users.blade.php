@@ -18,7 +18,7 @@
         <div class="a"><a href="{{ url('/pag_user') }}"><i class="fas fa-user"></i></a></div>
         <div class="a"><a href="{{ url('/cadastro_user') }}"><i class="fas fa-user-plus es"></i></a></div>
         <div class="a"><a href="{{ url('/users') }}"><i class="fas fa-users"></i></a></div>
-        <div class="a"><a href="{{ url('') }}"><i class="fas fa-chart-area"></i></a></div>
+        <div class="a"><a href="{{ url('/area_ponto') }}"><i class="fas fa-chart-area"></i></a></div>
     </div>
 @endsection
 
@@ -80,4 +80,4 @@
         </form>
 
     </div>
-@endsection
+@endsection 

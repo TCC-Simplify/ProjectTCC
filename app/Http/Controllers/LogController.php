@@ -2,10 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
+use App\User;
+use Illuminate\Contracts\Encryption\DecryptException;
+
 use Illuminate\Http\Request;
 
 class LogController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+
+    protected $request;
+
     /**
      * Create a new controller instance.
      *
@@ -23,6 +35,31 @@ class LogController extends Controller
      */
     public function index()
     {
-        return view('users.area_ponto');
+        $aux = Auth::user()->aux;
+        if($aux == 1){
+            return view('users/area_ponto');
+        }else{
+            return view('users/muda_senha');
+        }
     }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function muda(Request $request)
+    {
+        User::find(Auth::user()->id)->update([
+            'aux' =>  1,
+            'password' => bcrypt($request['senha'])
+        ]);
+
+        return view('users/area_ponto');
+        
+    }
+
+
 }
