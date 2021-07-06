@@ -60,9 +60,9 @@
             <div class="form-group">
                 <input type="text" class="form-control" name="complemento" placeholder="Complemento:" value="{{ $empresa->complemento }}" <?php if($empresa->complemento == null) echo 'style="display: none;"'?>>
             </div>
-            <a href="{{ url('/editar_empresa', $empresa->id) }}" <?php if($empresa->permissao == 2 || $empresa->permissao == 3) echo 'style="display: none;"'?>><button class="btn-alt-emp">Alterar</button></a>
+            <a href="{{ url('/editar_empresa', $empresa->id) }}" <?php if(Auth::user()->permissao == 2 || Auth::user()->permissao == 3) echo 'style="display: none;"'?>><button class="btn-alt-emp">Alterar</button></a>
             &nbsp &nbsp &nbsp &nbsp &nbsp 
-            <a href="{{ url('/del_empresa', $empresa->id) }}" <?php if($empresa->permissao == 2 || $empresa->permissao == 3) echo 'style="display: none;"'?>><button class="btn-del-emp">Desativar</button></a>
+            <a href="{{ url('/del_empresa', $empresa->id) }}" <?php if(Auth::user()->permissao == 2 || Auth::user()->permissao == 3) echo 'style="display: none;"'?>><button class="btn-del-emp">Desativar</button></a>
         </div>
     </div>
 @endsection
