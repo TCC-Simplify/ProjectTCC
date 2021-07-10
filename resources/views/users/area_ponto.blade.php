@@ -31,7 +31,8 @@
 
 
     <!-- Modal -->
-    <div class="modal fade" id="modalPonto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <form class="modal fade" action="{{ url('/ponto')}}" method="POST" enctype="multipart/form-data" id="modalPonto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      {{ csrf_field() }}  
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -55,23 +56,22 @@
               </div>
               <div class="form-group">
                 <label for="formMotivo">Motivo:</label>
-                <select class="form-control" id="formMotivo">
-                  <option value="entrada">Entrada</option>
-                  <option value="intervalo">Intervalo</option>
-                  <option value="saida">Saida</option>
-                  <option value="encerramento">Fim de expediente</option>
+                <select class="form-control" id="formMotivo" name="motivo">
+                  <option value="1">Entrada</option>
+                  <option value="2">Intervalo</option>
+                  <option value="3">Saida</option>
+                  <option value="4">Fim de expediente</option>
                 </select>
               </div>
 
 
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-            <button type="button" class="btn btn-primary">Confirmar</button>
+            <button type="submit" class="btn btn-primary">Confirmar</button>
           </div>
         </div>
       </div>
-    </div>
+  </form>
     <script>
     setInterval(function(){
     

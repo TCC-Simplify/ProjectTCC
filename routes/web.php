@@ -57,4 +57,8 @@ Route::post('/delete_empresa/{id}', 'EmpresaController@delete');
 Route::get('/area_ponto', function () {
     return view('users/area_ponto');
 });
+Route::post('/ponto', 'PontosController@create');
 
+Route::get('/mural', function () {
+    return view('controle/mural');
+});
