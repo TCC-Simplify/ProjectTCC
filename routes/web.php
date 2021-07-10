@@ -59,6 +59,17 @@ Route::get('/area_ponto', function () {
 });
 Route::post('/ponto', 'PontosController@create');
 
+//Mural
 Route::get('/mural', function () {
     return view('controle/mural');
+});
+
+//Atividades
+Route::get('/atividades', function () {
+    return view('controle/atividades');
+});
+
+//Chat
+Route::get('/chat', function () {
+    return view('controle/chat');
 });
