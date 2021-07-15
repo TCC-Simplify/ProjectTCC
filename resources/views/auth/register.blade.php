@@ -2,7 +2,7 @@
  
 @section('content')
 <div class="tudo">
-        <form class="form" role="form" method="POST" action="{{ url('/register') }}">
+        <form class="form" role="form" method="POST" action="{{ url('/registro') }}">
             {{ csrf_field() }}
             <div class="header">
                 <a href="{{ url('/cadastro') }}" class="volt"><p>&#8592;  Voltar</p></a>

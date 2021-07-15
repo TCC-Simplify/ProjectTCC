@@ -20,6 +20,8 @@ Route::get('/emails', function () {
     return view('emails');
 });
 
+Route::post('/registro', 'Auth\RegisterController@register');
+
 Route::get('/home', 'HomeController@index');
 Route::get('/log', 'LogController@index');
 Route::post('/log/muda_senha', 'LogController@muda');
