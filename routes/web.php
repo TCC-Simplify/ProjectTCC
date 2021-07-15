@@ -20,12 +20,11 @@ Route::get('/emails', function () {
     return view('emails');
 });
 
-Route::post('/registro', 'Auth\RegisterController@register');
-
+Auth::routes();
 Route::get('/home', 'HomeController@index');
+
 Route::get('/log', 'LogController@index');
 Route::post('/log/muda_senha', 'LogController@muda');
-Auth::routes(); 
 
 //rotas usuario
 Route::get('/cadastro_user',function(){
