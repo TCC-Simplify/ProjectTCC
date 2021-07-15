@@ -17,6 +17,26 @@
     "vue-resource": "^1.0.3"
   },
   "dependencies": {
-    "js-brasil": "^2.4.6"
-  }
+    "gulp-install": "^1.1.0",
+    "js-brasil": "^2.4.6",
+    "laravel-echo": "^1.11.0",
+    "pusher-js": "^7.0.3"
+  },
+  "name": "projecttcc",
+  "description": "<h2>🎓Projeto de TCC - Simplify</h2>\r <h4 align=\"justify\">&nbsp;&nbsp;&nbsp;&nbsp;O projeto tem o objetivo de desenvolver um SaaS (software as a service) que supre a demanda\r das empresas que funcionam em modelo de home office. As principais funções do programa serão\r voltadas para a gestão dos funcionários e da empresa. A gestão de ponto, organização das tarefas,\r overview de cada funcionário e de sua produtividade, mural de avisos, chat com a equipe ou com o\r funcionário estão entre as principais aplicações do site.</h4>\r <h4>&nbsp;&nbsp;&nbsp;&nbsp;A Simplify visa ajudar o empresário a gerenciar sua empresa com eficiência e facilidade, reduzindo\r os custos e o tempo dos processos e tendo uma equipe mais automatizada, assim conquistando tempo\r livre para realizar outras tarefas.</h4>\r <h2>💻Tecnologias utilizadas</h2>\r <h4>\r   <ul>\r     <li>CSS-3</li>\r     <li>JavaScript</li>\r     <li>HTML5</li>\r     <li>PHP</li>\r     <li>MySQL</li>\r     <li>Laravel</li>\r   </ul>\r </h4>",
+  "version": "1.0.0",
+  "main": "gulpfile.js",
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TCC-Simplify/ProjectTCC.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TCC-Simplify/ProjectTCC/issues"
+  },
+  "homepage": "https://github.com/TCC-Simplify/ProjectTCC#readme"
 }
