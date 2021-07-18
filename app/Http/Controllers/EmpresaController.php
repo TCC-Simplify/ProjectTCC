@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 use App\Empresa;
+use App\Equipes;
 use DB;
 use Illuminate\Support\Facades\Validator;
 
@@ -181,4 +183,94 @@ class EmpresaController extends Controller
          
  
      }
+
+    //  public function equipe_show(){
+    //     $equipes = Equipes::find();
+    //     if(!$equipes)
+    //     {
+    //         return redirect()->back();
+    //     }
+    //     return view('empresa/equipes',compact('equipes'));
+    // }
+
+    public function equipe_show($nome){
+        $id_equipe = DB::table('equipes')->where('equipe', $nome)->value('id');
+        $usuarios = User::all()->where('equipe', $id_equipe);
+        if(!$usuarios)
+        {
+            return redirect()->back();
+        }
+
+        return view('empresa/equipe_dados', compact('usuarios'))->with('nome', $nome);
+    }
+
+     public function equipe_show_all(){
+        $equipes = Equipes::all()->where('ativo', 's');
+        if(!$equipes)
+        {
+            return redirect()->back();
+        }
+        return view('empresa/equipes',compact('equipes'));
+    }
+
+    public function equipe_create_form(){
+        $usuarios = User::all();
+        if(!$usuarios)
+        {
+            return redirect()->back();
+        }
+        return view('empresa/equipes_cadastro', compact('usuarios'));
+    }
+
+    public function equipe_create(Request $request){
+
+        $id_empresa = session()->get('id_empresa');
+        Equipes::create([
+            'aux' =>  1,
+            'equipe' => $request['nome'],
+            'ativo' =>  's',
+            'empresa' =>  $id_empresa,
+        ]);
+        $id_equipe = DB::table('equipes')->where('equipe', $request['nome'])->value('id');
+        User::find($request['usuario'])->update([
+            'equipe' => $id_equipe
+        ]);
+
+        return redirect('/equipes');
+    }
+
+    public function equipe_delete(Request $request){
+        Equipes::find($request['equipe'])->update([
+            'ativo' => 'n'
+        ]);
+        User::where('equipe', $request['equipe'])->update([
+            'equipe' => null
+        ]);
+        
+        return redirect()->back();
+    }
+
+    public function equipe_add_form($nome){
+        $id_equipe = DB::table('equipes')->where('equipe', $nome)->value('id');
+        $usuarios = User::all()->where('equipe', '!=', $id_equipe);
+
+        return view('empresa/equipe_add', compact('usuarios'))->with('nome', $nome);
+    }
+
+    public function equipe_add(Request $request, $nome){
+        $id_equipe = DB::table('equipes')->where('equipe', $nome)->value('id');
+        User::find($request['usuario'])->update([
+            'equipe' => $id_equipe
+        ]);
+
+        return redirect('/equipe/'.$nome);
+    }
+
+    public function equipe_remove(Request $request){
+        User::find($request['usuario'])->update([
+            'equipe' => null
+        ]);
+
+        return redirect()->back();
+    }
 }

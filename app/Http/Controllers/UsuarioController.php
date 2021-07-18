@@ -77,7 +77,8 @@ class UsuarioController extends Controller
              'password' => bcrypt( $senha ),
              'ativo'=> 's',
              'empresa'=> $id,
-             'aux' => 0
+             'aux' => 0,
+             'equipe' => null
          ]);
  
          return redirect('/users');

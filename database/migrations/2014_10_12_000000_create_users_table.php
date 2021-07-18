@@ -23,6 +23,8 @@ class CreateUsersTable extends Migration
             $table->integer('permissao');
             $table->string('password');
             $table->string('ativo');
+            $table->integer('equipe')->unsigned()->nullable();
+            $table->foreign('equipe')->references('id')->on('equipes');
             $table->rememberToken();
             $table->timestamps();
         });

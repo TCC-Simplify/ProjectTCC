@@ -68,6 +68,18 @@ Route::get('/del_empresa/{id}', 'EmpresaController@mostra');
 Route::post('/update_empresa/{id}', 'EmpresaController@update');
 Route::post('/delete_empresa/{id}', 'EmpresaController@delete');
 
+//Rotas Equipe
+Route::get('/equipes', 'EmpresaController@equipe_show_all');
+Route::get('/form_criar_equipe', 'EmpresaController@equipe_create_form');
+Route::post('/criar_equipe', 'EmpresaController@equipe_create');
+Route::post('/deletar_equipe', 'EmpresaController@equipe_delete');
+
+Route::get('/equipe/{nome}', 'EmpresaController@equipe_show');
+Route::get('/equipe/add/{nome}', 'EmpresaController@equipe_add_form');
+Route::post('/equipe/add/processing/{nome}', 'EmpresaController@equipe_add');
+
+Route::post('/equipe/delete', 'EmpresaController@equipe_remove');
+
 //rotas zaneta
 Route::get('/area_ponto', function () {
     return view('users/area_ponto');
